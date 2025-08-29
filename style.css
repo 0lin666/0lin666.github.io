@@ -368,10 +368,30 @@ nav a.active::after {
     }
 }
 
-@media (max-width: 480px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.25rem; }
-    .font-art-cn { font-size: 1.4rem; }
-    .font-art-en { font-size: 1.6rem; }
+@media (max-width: 768px) {
+    /* 导航栏整体改为竖排 */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 0.75rem 1rem;
+    }
+
+    /* 欢迎文字居中并在顶部 */
+    .nav-welcome {
+        position: static; /* 取消 absolute 定位 */
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* 菜单竖排，居中显示 */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }
+
