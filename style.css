@@ -43,6 +43,7 @@ body {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-card);
+    margin-top: 60px; /* 预留导航栏高度 */
 }
 
 /* ================= 标题 ================= */
@@ -185,8 +186,8 @@ footer {
 nav {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* 从左开始 */
-    position: sticky;
+    justify-content: flex-start;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -195,13 +196,13 @@ nav {
     color: white;
     padding: 0 1rem;
     z-index: 1000;
-    backdrop-filter: blur(4px);
     gap: 1rem;
+    flex-wrap: nowrap;
 }
 
 .nav-welcome {
     font-family: 'Ma Shan Zheng', cursive;
-    font-size: 2rem;
+    font-size: clamp(1rem, 2vw, 2rem);
     color: white;
     margin-right: 1rem;
     flex-shrink: 0;
@@ -210,13 +211,13 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
     align-items: center;
+    justify-content: flex-start;
+    gap: clamp(0.5rem, 2vw, 1rem);
     margin: 0;
     padding: 0;
-    flex-wrap: nowrap; /* 始终一行 */
-    flex-grow: 1;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 nav li {
@@ -227,8 +228,8 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    white-space: nowrap; /* 不换行 */
-    font-size: clamp(0.8rem, 1vw, 1rem); /* 根据屏幕自动缩放字体 */
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 1.8vw, 1rem);
 }
 
 nav a.active {
@@ -238,17 +239,12 @@ nav a.active {
 nav a.active::after {
     content: '';
     position: absolute;
-    bottom: -0.5rem;
+    bottom: -0.25rem;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: var(--color-primary);
     border-radius: 1px;
-}
-
-/* 页面主体预留导航栏高度 */
-main, .container {
-    margin-top: 60px; /* 导航栏高度 + 空隙 */
 }
 
 /* ================= 返回顶部 ================= */
@@ -356,33 +352,19 @@ main, .container {
     }
 
     .nav-welcome {
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 3vw, 1.5rem);
     }
 
-    .back-to-top {
-        bottom: 1rem;
-        right: 1rem;
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
+    nav a {
+        font-size: clamp(0.6rem, 3vw, 0.9rem);
     }
 
-    .info-table {
-        display: block;
-        overflow-x: auto;
-    }
-
-    .nav-banner img {
-        height: auto;
+    nav ul {
+        gap: clamp(0.3rem, 2vw, 0.6rem);
     }
 }
 
-/* 手机横屏、窄屏依然一行，不换行 */
 @media (max-width: 480px) {
-    nav a {
-        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
-    }
-
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.25rem; }
