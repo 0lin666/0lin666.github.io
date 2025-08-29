@@ -2,50 +2,73 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>我参与的项目及项目介绍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我参与的项目及项目介绍 - 林苏雅</title>
+    <!-- 引入 Inter 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Dancing+Script:wght@700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <!-- 引入全局样式表 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>我参与的项目及项目介绍</h1>
-    </header>
-
-    <nav>
+     <nav>
         <ul>
             <li><a href="index.html">首页</a></li>
-            <li><a href="basic-info.html">我的个人基本信息</a></li>
-            <li><a href="achievements.html">我参与的项目及项目介绍</a></li>
+            <li><a href="basic-info.html">个人基本信息</a></li>
+            <li><a href="achievements.html" class="active">参与项目及介绍</a></li>
             <li><a href="contact.html">如何联系我</a></li>
         </ul>
     </nav>
+     <section class="nav-banner">
 
+
+  <img src="img/8.0.jpg" alt="首页横幅">
+</section>
     <main>
-        <article>
-            <h2>我的艺术项目与创作理念</h2>
+        <!-- 艺术标题 -->
+        <div class="font-art-cn">我的美术作品</div>
 
-            <section>
-                <h3>作品一：《静夜思》</h3>
-                <p>这幅画灵感来源于李白的同名诗作。我试图通过冷色调与流动的笔触，表现人在异乡的孤独与思绪的飘荡。画面中没有人物，只有月光洒在空旷的庭院上，象征内心的宁静与乡愁。</p>
-            </section>
+        <!-- 作品一 -->
+        <article class="project-card">
+            <h3>作品一：《静夜思》</h3>
+            <p>这幅画灵感来源于李白的同名诗作。我试图通过冷色调与流动的笔触，表现人在异乡的孤独与思绪的飘荡。画面中没有人物，只有月光洒在空旷的庭院上，象征内心的宁静与乡愁。</p>
+        </article>
 
-            <section>
-                <h3>作品二：《城市的呼吸》</h3>
-                <p>这是一组系列画作，描绘现代都市中人们的生活节奏。我使用几何线条与重叠色块，表现高楼林立下的压抑与希望。红色代表激情，灰色代表压力，而穿插其中的绿色象征生命力。</p>
-            </section>
+        <!-- 作品二 -->
+        <article class="project-card">
+            <h3>作品二：《城市的呼吸》</h3>
+            <p>这是一组系列画作，描绘现代都市中人们的生活节奏。我使用几何线条与重叠色块，表现高楼林立下的压抑与希望。红色代表激情，灰色代表压力，而穿插其中的绿色象征生命力。</p>
+        </article>
 
-            <section>
-                <h3>作品三：《四季·心象》</h3>
-                <p>以四季为主题，分别用色彩与构图表达心境的变化。春为嫩绿与曲线，象征新生；夏为浓烈红黄，表现热情；秋是金黄与落叶般的笔触；冬则用留白与极简线条，表达沉思与内省。</p>
-            </section>
+        <!-- 作品三 -->
+        <article class="project-card">
+            <h3>作品三：《四季·心象》</h3>
+            <p>以四季为主题，分别用色彩与构图表达心境的变化。春为嫩绿与曲线，象征新生；夏为浓烈红黄，表现热情；秋是金黄与落叶般的笔触；冬则用留白与极简线条，表达沉思与内省。</p>
+        </article>
 
-            <section>
-                <h3>创作理念</h3>
-                <p>我认为艺术不是对现实的复制，而是内心世界的投射。每一笔都是情绪的延伸，每一色都是灵魂的低语。我希望观者能在我的画中，找到属于自己的共鸣。</p>
-            </section>
+        <!-- 创作理念模块 -->
+        <article class="project-card" style="background-color: #fff5f5; border-left: 4px solid #e8a5a5;">
+            <h3>创作理念</h3>
+            <p>我认为艺术不是对现实的复制，而是内心世界的投射。每一笔都是情绪的延伸，每一色都是灵魂的低语。我希望观者能在我的画中，找到属于自己的共鸣。</p>
         </article>
     </main>
 
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" aria-label="返回顶部">↑</a>
+
     <footer>
-        <p>&copy; 2025 林苏雅. 版权所有。</p>
+        <p>&copy; 2025 六十一. 版权所有。</p>
     </footer>
+
+    <!-- 返回顶部脚本 -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
