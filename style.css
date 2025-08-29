@@ -186,23 +186,35 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
+    height: 50px;
     background-color: #1e293b;
     color: white;
     padding: 0 1rem;
     z-index: 1000;
     backdrop-filter: blur(4px);
+    flex-wrap: wrap; /* 自动换行 */
 }
 
+/* 左侧欢迎 */
+.nav-welcome {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2rem;
+    color: white;
+    margin-right: 2rem;
+}
+
+/* 导航菜单 */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 1rem;
+    flex-wrap: wrap; /* 小屏幕自动换行 */
+    align-items: center;
 }
 
 nav a {
@@ -225,15 +237,6 @@ nav a.active::after {
     height: 2px;
     background-color: var(--color-primary);
     border-radius: 1px;
-}
-
-/* 左侧欢迎 */
-.nav-welcome {
-    position: absolute;
-    left: 1rem;
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 2rem;
-    color: white;
 }
 
 /* ================= 返回顶部 ================= */
@@ -327,64 +330,33 @@ nav a.active::after {
     .font-art-cn, .font-art-en {
         font-size: 2rem;
     }
+
+    .nav-welcome {
+        font-size: 1.8rem;
+        margin-right: 1rem;
+    }
+
+    nav ul {
+        gap: 0.75rem;
+    }
+
+    main, .container {
+        margin-top: 60px; /* 给导航留空隙 */
+    }
 }
 
 @media (max-width: 768px) {
-    /* 导航栏整体改为竖排 */
-    nav {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 0.75rem 1rem;
-    }
-
-    /* 欢迎文字居中并在顶部 */
     .nav-welcome {
-        position: static; /* 取消 absolute 定位 */
-        margin-bottom: 0.5rem;
         font-size: 1.5rem;
-        text-align: center;
+        margin-right: 0.5rem;
     }
 
-    /* 菜单竖排，居中显示 */
     nav ul {
-        flex-direction: column;
         gap: 0.5rem;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
     }
 
-    /* 给页面主体留出导航栏高度，防止被覆盖 */
     main, .container {
-        margin-top: 180px; /* 根据实际竖排 nav 高度调整 */
-    }
-
-    .container, main, .info-card, .project-card {
-        max-width: 95%;
-        padding: 1rem;
-        margin: 1rem auto;
-    }
-
-    .font-art-cn, .font-art-en {
-        font-size: 1.6rem;
-    }
-
-    .back-to-top {
-        bottom: 1rem;
-        right: 1rem;
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-
-    .info-table {
-        display: block;
-        overflow-x: auto;
-    }
-
-    .nav-banner img {
-        height: auto;
+        margin-top: 70px; /* 手机略高导航 */
     }
 }
 
