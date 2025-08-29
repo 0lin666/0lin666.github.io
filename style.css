@@ -393,5 +393,16 @@ nav a.active::after {
         align-items: center;
         justify-content: center;
     }
+   /* 给页面主体留出导航栏高度，防止被覆盖 */
+main, .container {
+    margin-top: 60px; /* 50px 导航栏高度 + 10px 空隙 */
 }
+}
+  @media (max-width: 768px) {
+    main, .container {
+        margin-top: 100px; /* 手机竖排导航栏高度大，增加空隙 */
+    }
+}
+ 
+
 
