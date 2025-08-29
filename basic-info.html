@@ -2,69 +2,75 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>我的个人基本信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人基本信息 - 林苏雅</title>
+    <!-- 引入 Inter 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入全局样式表 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>我的个人基本信息</h1>
-    </header>
-
-    <nav>
+     <nav>
         <ul>
             <li><a href="index.html">首页</a></li>
-            <li><a href="basic-info.html">我的个人基本信息</a></li>
-            <li><a href="achievements.html">我参与的项目及项目介绍</a></li>
+            <li><a href="basic-info.html" class="active">个人基本信息</a></li>
+            <li><a href="achievements.html">参与项目及介绍</a></li>
             <li><a href="contact.html">如何联系我</a></li>
         </ul>
     </nav>
-
+     <section class="nav-banner">
+  <img src="img/8.0.jpg" alt="首页横幅">
+</section>
     <main>
-        <article>
-            <h2>关于我：林苏雅</h2>
-            <p><strong>这是我的个人信息，请勿随意转载。</strong></p>
+    <!-- 粉色卡片 1：个人介绍 -->
+    <article class="info-card">
+        <h2>关于我：</h2>
+        <p>我叫 <strong>六十一</strong>，热爱生活，喜欢探索新事物。我的个人爱好包括：</p>
+        <ul>
+            <li>听歌</li>
+            <li>看小说</li>
+            <li>尝试新鲜刺激的东西</li>
+            <li>学习新语言</li>
+        </ul>
+    </article>
 
-            <p>我叫 <strong>林苏雅</strong>，热爱生活，喜欢探索新事物。我的个人爱好包括：</p>
-            <ul>
-                <li>听歌（尤其是民谣和轻音乐）</li>
-                <li>阅读艺术类书籍</li>
-                <li>散步与冥想</li>
-                <li>学习新语言</li>
-            </ul>
+    <!-- 粉色卡片 2：详细信息表 -->
+    <article class="info-card">
+        <h2>我的职业：</h2>
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>职业</th>
+                    <th>成就</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>画家（主要职业）</td>
+                    <td>画出名动世界的画</td>
+                </tr>
+                <tr>
+                    <td>作家</td>
+                    <td>写过几本爆火小说</td>
+                </tr>
+                <tr>
+                    <td>音乐家</td>
+                    <td>鉴赏音乐能力高超</td>
+                </tr>
+                <tr>
+                    <td>运动家</td>
+                    <td>国家一级运动员</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <p>了解更多艺术资讯，可以访问：<a href="https://www.example-art.com" target="_blank" rel="noopener">Example 艺术网</a></p>
+    </article>
+</main>
 
-            <h3>详细信息表</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>项目</th>
-                        <th>内容</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>姓名</td>
-                        <td>林苏雅</td>
-                    </tr>
-                    <tr>
-                        <td>职业</td>
-                        <td>画家 / 艺术创作者</td>
-                    </tr>
-                    <tr>
-                        <td>所在地</td>
-                        <td>中国·杭州</td>
-                    </tr>
-                    <tr>
-                        <td>兴趣爱好</td>
-                        <td>听歌、绘画、阅读、旅行</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p>了解更多艺术资讯，可以访问：<a href="https://www.example-art.com" target="_blank" rel="noopener">Example 艺术网</a></p>
-        </article>
-    </main>
 
     <footer>
-        <p>&copy; 2025 林苏雅. 版权所有。</p>
+        <p>&copy; 2025 六十一. 版权所有。</p>
     </footer>
 </body>
 </html>
