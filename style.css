@@ -56,15 +56,8 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-h2 {
-    font-size: 1.75rem;
-    margin: 1rem 0;
-}
-
-h3 {
-    font-size: 1.375rem;
-    margin: 1rem 0 0.75rem;
-}
+h2 { font-size: 1.75rem; margin: 1rem 0; }
+h3 { font-size: 1.375rem; margin: 1rem 0 0.75rem; }
 
 /* ================= 文章、卡片 ================= */
 .article-card,
@@ -88,19 +81,10 @@ h3 {
     box-shadow: 0 8px 20px -6px rgba(0,0,0,0.12);
 }
 
-.info-card h2, .info-card h3 {
-    color: #bd899b;
-}
+.info-card h2, .info-card h3 { color: #bd899b; }
+.info-card p { margin: 0.5rem 0; }
 
-.info-card p {
-    margin: 0.5rem 0;
-}
-
-.info-card ul {
-    list-style: none;
-    padding: 0;
-}
-
+.info-card ul { list-style: none; padding: 0; }
 .info-card ul li {
     background: #ece0e0;
     border: 1px solid #f0dada;
@@ -110,19 +94,14 @@ h3 {
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     transition: background 0.2s ease;
 }
-
-.info-card ul li:hover {
-    background: #dcbbc8;
-}
+.info-card ul li:hover { background: #dcbbc8; }
 
 .info-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
 }
-
-.info-table td,
-.info-table th {
+.info-table td, .info-table th {
     background: #fff;
     border: 1px solid #f0dada;
     border-radius: 8px;
@@ -132,14 +111,8 @@ h3 {
 }
 
 /* ================= 链接 ================= */
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* ================= 图片 ================= */
 img {
@@ -162,14 +135,8 @@ blockquote {
 }
 
 /* ================= 列表 ================= */
-ul, ol {
-    margin: 1.5rem 0;
-    padding-left: 1.75rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
+ul, ol { margin: 1.5rem 0; padding-left: 1.75rem; }
+li { margin-bottom: 0.5rem; }
 
 /* ================= 页脚 ================= */
 footer {
@@ -185,7 +152,7 @@ footer {
 nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* 从左开始 */
     position: sticky;
     top: 0;
     left: 0;
@@ -196,7 +163,8 @@ nav {
     padding: 0 1rem;
     z-index: 1000;
     backdrop-filter: blur(4px);
-    flex-wrap: wrap; /* 自动换行 */
+    flex-wrap: wrap; /* 小屏幕自动换行 */
+    gap: 0.5rem; /* 左右间隔 */
 }
 
 /* 左侧欢迎 */
@@ -204,17 +172,19 @@ nav {
     font-family: 'Ma Shan Zheng', cursive;
     font-size: 2rem;
     color: white;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
 }
 
 /* 导航菜单 */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* 从左开始 */
     gap: 1rem;
-    flex-wrap: wrap; /* 小屏幕自动换行 */
+    flex-wrap: wrap; /* 自动换行 */
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -224,10 +194,7 @@ nav a {
     position: relative;
 }
 
-nav a.active {
-    color: var(--color-primary);
-}
-
+nav a.active { color: var(--color-primary); }
 nav a.active::after {
     content: '';
     position: absolute;
@@ -261,14 +228,8 @@ nav a.active::after {
     text-decoration: none;
 }
 
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    transform: translateY(-2px);
-}
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: translateY(-2px); }
 
 /* ================= 艺术字体 ================= */
 .font-art-cn {
@@ -278,7 +239,6 @@ nav a.active::after {
     color: var(--color-text);
     margin: 2rem 0;
 }
-
 .font-art-en {
     font-family: 'Dancing Script', cursive;
     font-size: 2.8rem;
@@ -322,42 +282,16 @@ nav a.active::after {
 
 /* ================= 响应式 ================= */
 @media (max-width: 1024px) {
-    .container, main, .info-card, .project-card {
-        max-width: 90%;
-        padding: 1.5rem;
-    }
-
-    .font-art-cn, .font-art-en {
-        font-size: 2rem;
-    }
-
-    .nav-welcome {
-        font-size: 1.8rem;
-        margin-right: 1rem;
-    }
-
-    nav ul {
-        gap: 0.75rem;
-    }
-
-    main, .container {
-        margin-top: 60px; /* 给导航留空隙 */
-    }
+    .container, main, .info-card, .project-card { max-width: 90%; padding: 1.5rem; }
+    .font-art-cn, .font-art-en { font-size: 2rem; }
+    .nav-welcome { font-size: 1.8rem; margin-right: 1rem; }
+    main, .container { margin-top: 60px; }
 }
 
 @media (max-width: 768px) {
-    .nav-welcome {
-        font-size: 1.5rem;
-        margin-right: 0.5rem;
-    }
-
-    nav ul {
-        gap: 0.5rem;
-    }
-
-    main, .container {
-        margin-top: 70px; /* 手机略高导航 */
-    }
+    .nav-welcome { font-size: 1.5rem; margin-right: 0.5rem; }
+    nav ul { gap: 0.5rem; }
+    main, .container { margin-top: 70px; }
 }
 
 @media (max-width: 480px) {
