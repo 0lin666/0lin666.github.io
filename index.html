@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 林苏雅的个人主页</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* 网页失焦时模糊背景和消息 */
+        .blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.3);
+            display: none;
+            z-index: 9999;
+        }
+
+        #leave-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 28px;
+            background: rgba(0,0,0,0.6);
+            padding: 20px 30px;
+            border-radius: 12px;
+            display: none;
+            z-index: 10000;
+            text-align: center;
+            animation: fadeInOut 3s forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <span class="nav-welcome">欢迎</span>
+        <ul>
+            <li><a href="index.html" class="active">首页</a></li>
+            <li><a href="basic-info.html">个人基本信息</a></li>
+            <li><a href="achievements.html">参与项目及项目介绍</a></li>
+            <li><a href="contact.html">如何联系我</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">☀️</button>
+    </nav>
+
+    <main>
+        <!-- Hero 区域：导航栏和首页内容之间 -->
+        <section class="hero">
+            <h1 id="typing-title"></h1>
+             <span class="hero-signature">———六十一</span>
+        </section>
+      
+        <!-- 首页原有内容 -->
+        <section class="container">
+            <h2>你好</h2>
+            <p>欢迎访问我的个人网页，这里展示了我的基本信息、项目经历、艺术成就以及联系方式。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 六十一. 版权所有。</p>
+    </footer>
+
+    <!-- 模糊覆盖层 + 消息 -->
+    <div class="blur-overlay" id="blur"></div>
+    <div id="leave-message"></div>
+
+    <script>
+        // 网页离开提示逻辑
+        const blur = document.getElementById("blur");
+        const leaveMsg = document.getElementById("leave-message");
+
+        window.addEventListener("blur", () => {
+            blur.style.display = "block";
+            leaveMsg.innerText = "算了算了，走吧，要走的人留不住";
+            leaveMsg.style.display = "block";
+
+            setTimeout(() => {
+                leaveMsg.innerText = "别走呀，开玩笑呢，快回来！QAQ";
+            }, 1500);
+        });
+
+        window.addEventListener("focus", () => {
+            blur.style.display = "none";
+            leaveMsg.style.display = "none";
+        });
+    </script>
+
+    <!-- JS 放在 body 尾部 -->
+    <script src="theme-toggle.js"></script>
+    <script src="typing.js"></script>
+    <script src="konami.js"></script>
+
+</body>
+
+</html>
