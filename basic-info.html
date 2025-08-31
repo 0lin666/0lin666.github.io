@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人基本信息 - 林苏雅</title>
+    <!-- 引入 Inter 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入全局样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet 样式表 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<script src="theme-toggle.js"></script>
+<script src="skills.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="footprints.js"></script>
+<script src="konami.js"></script>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="basic-info.html" class="active">个人基本信息</a></li>
+            <li><a href="achievements.html">参与项目及介绍</a></li>
+            <li><a href="contact.html">如何联系我</a></li>
+        </ul>
+        <!-- 🌞 日夜切换按钮 -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">☀️</button>
+    </nav>
+    <div id="arrow-deco"></div>
+
+    <main>
+        <!-- 粉色卡片 1：关于我 + 地图 -->
+        <article class="info-card about-me">
+            <div class="about-container">
+                <!-- 左边：文字和爱好分数 -->
+                <div class="about-left">
+                    <h2>关于我：</h2>
+                    <p>我叫 <strong>六十一</strong>，热爱生活，喜欢探索新事物。我的个人爱好包括：</p>
+                    <ul>
+                        <li>听歌</li>
+                        <li>看小说</li>
+                        <li id="tourism">旅游</li>
+                        <li>学习新语言</li>
+                    </ul>
+                    <h2>爱好度：</h2>
+                    <div class="skill">
+                        <span class="skill-name">听歌</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="99%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">看小说</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">旅游</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">学习新语言</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="50%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右边：地图 -->
+                <div class="about-right">
+                    <h2>我的足迹:</h2>
+                    <div id="my-map"></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 粉色卡片 2：详细信息表 -->
+        <article class="info-card">
+            <h2>我的职业：</h2>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>职业</th>
+                        <th>成就</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>画家（主要职业）</td>
+                        <td>画出名动世界的画</td>
+                    </tr>
+                    <tr>
+                        <td>作家</td>
+                        <td>写过几本爆火小说</td>
+                    </tr>
+                    <tr>
+                        <td>音乐家</td>
+                        <td>鉴赏音乐能力高超</td>
+                    </tr>
+                    <tr>
+                        <td>程序员</td>
+                        <td>暂无</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>职业时长比例：</h2>
+            <div class="skill">
+                <span class="skill-name">画家</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="30%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">作家</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="20%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">音乐家</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="30%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">程序员</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-percent="10%"></div>
+                </div>
+            </div>
+
+            <p>了解更多艺术资讯，可以访问：<a href="https://www.example-art.com" target="_blank" rel="noopener">Example 艺术网</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 六十一. 版权所有。</p>
+    </footer>
+
+    <style>
+        /* 关于我 + 地图布局 */
+        .about-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .about-left {
+            flex: 1;
+        }
+
+        .about-right {
+            width: 400px;
+        }
+
+        #my-map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</body>
+
+</html>
