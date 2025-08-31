@@ -1,0 +1,758 @@
+/* ========================================
+   🌸 温柔日式简约博客 CSS 样式表（响应式版本）
+   主色: #fff0f0 / #fde8e8
+   字体: Inter / Ma Shan Zheng / Dancing Script
+   ======================================== */
+
+/* 根变量 */
+:root {
+    --color-primary: #e8a5a5;
+    --color-bg: #f8eae7;
+    --color-card: #fff7f6;
+    --color-text: #2e3d57;
+    --color-border: #e0e0e0;
+    --color-code-bg: #f8f4f4;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --shadow-card: 0 4px 12px -4px rgba(0,0,0,0.08);
+    --transition-normal: all 0.2s ease;
+}
+
+/* ================= 基础重置 ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* ================= 主容器 ================= */
+.container, main {
+    max-width: 75ch;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    margin-top: 150px; /* 预留导航栏高度 */
+}
+
+/* ================= 标题 ================= */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    background: linear-gradient(90deg, #d3cece, #00030e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.375rem;
+    margin: 1rem 0 0.75rem;
+}
+
+/* ================= 文章、卡片 ================= */
+.article-card,
+.info-card,
+.project-card {
+    background: var(--color-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 900px;
+    border: 1px solid #f0dada;
+    transition: var(--transition-normal);
+    overflow: hidden;
+}
+
+.article-card:hover,
+.info-card:hover,
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px -6px rgba(0,0,0,0.12);
+}
+
+.info-card h2, .info-card h3 {
+    color: #bd899b;
+}
+
+.info-card p {
+    margin: 0.5rem 0;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card ul li {
+    background: #ece0e0;
+    border: 1px solid #f0dada;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s ease;
+}
+
+.info-card ul li:hover {
+    background: #dcbbc8;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.info-table td,
+.info-table th {
+    background: #fff;
+    border: 1px solid #f0dada;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ================= 链接 ================= */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================= 图片 ================= */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    display: block;
+    margin: 1.5rem 0;
+    object-fit: cover;
+}
+
+/* ================= 引用块 ================= */
+blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0;
+    background-color: rgba(232,165,165,0.05);
+    font-style: italic;
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+/* ================= 列表 ================= */
+ul, ol {
+    margin: 1.5rem 0;
+    padding-left: 1.75rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* ================= 页脚 ================= */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* ================= 导航栏 ================= */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #1e293b;
+    color: white;
+    padding: 0 1rem;
+    z-index: 1000;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.nav-welcome {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: white;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+nav li {
+    flex-shrink: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 1.8vw, 1rem);
+}
+
+nav a.active {
+    color: var(--color-primary);
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 1px;
+}
+
+/* ================= 返回顶部 ================= */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= 艺术字体 ================= */
+.font-art-cn {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--color-text);
+    margin: 2rem 0;
+}
+
+.font-art-en {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* ================= 项目卡片 ================= */
+.project-card {
+    background: #fff7f6 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8a5a5' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 1.75rem;
+    margin: 2rem auto;
+    max-width: 72ch;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0.6;
+}
+
+/* ================= 响应式 ================= */
+@media (max-width: 1024px) {
+    .container, main, .info-card, .project-card {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    .font-art-cn, .font-art-en {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container, main, .info-card, .project-card {
+        max-width: 95%;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .font-art-cn, .font-art-en {
+        font-size: 1.6rem;
+    }
+
+    .nav-welcome {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    nav a {
+        font-size: clamp(0.6rem, 3vw, 0.9rem);
+    }
+
+    nav ul {
+        gap: clamp(0.3rem, 2vw, 0.6rem);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    .font-art-cn { font-size: 1.4rem; }
+    .font-art-en { font-size: 1.6rem; }
+}
+/* ================= 日夜切换按钮 ================= */
+.theme-toggle {
+    margin-left: auto;   /* 挤到最右边 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+/* ================= 深色模式变量覆盖 ================= */
+body.dark {
+    --color-bg: #121212;
+    --color-card: #1e1e1e;
+    --color-text: #827e7e;
+    --color-border: #333;
+    --color-primary: #ed8998;
+}
+
+body, .info-card, .project-card, main, nav, footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* ================= 深色模式背景调整 ================= */
+body.dark {
+    --color-bg: #121212;  /* 页面整体背景 */
+    --color-card: #1e1e1e; /* 卡片背景 */
+    --color-border: #333;   /* 边框颜色 */
+    --color-primary: #ed8998; /* 强调色保持 */
+}
+
+/* ================= 容器和主内容 ================= */
+body.dark .container,
+body.dark main {
+    background: #1e1e1e;  /* 深色底，不改文字 */
+    border: 1px solid #333;
+}
+
+/* ================= 项目卡片 ================= */
+body.dark .project-card {
+    background: #1e1e1e url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ed8998' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+/* ================= info-card 列表 ================= */
+body.dark .info-card,
+body.dark .info-card ul li {
+    background: #2a2a2a;  /* 深色底，文字颜色不变 */
+    border: 1px solid #333;
+}
+
+/* ================= info-table 表格 ================= */
+body.dark .info-table td,
+body.dark .info-table th {
+    background: #2a2a2a;  /* 深色底 */
+    border: 1px solid #333;
+}
+
+/* ================= 引用块 ================= */
+body.dark blockquote {
+    background-color: rgba(255, 255, 255, 0.05); /* 半透明深色底 */
+}
+
+
+
+
+
+
+
+.hero {
+    height: 200px;               /* 区域高度可调 */
+    display: flex;
+    flex-direction: column;      /* 让签名和文字垂直排列 */
+    align-items: center;         /* 垂直居中 */
+    justify-content: center;     /* 水平居中 */
+    text-align: center;
+    margin: 2rem 0;              
+    position: relative;          /* 为签名定位 */
+}
+
+/* 浅色模式保持原来的渐变 */
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    min-height: 2.5rem;
+    line-height: 2.5rem;
+    background: linear-gradient(90deg, #d3cece, #00030e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 深色模式下改成浅灰色 */
+body.dark .hero h1 {
+    background: none;                  /* 去掉渐变 */
+    -webkit-background-clip: initial;  /* 重置裁剪 */
+    -webkit-text-fill-color: #cccccc;  /* 浅灰色文字 */
+}
+
+.hero-signature {
+    position: absolute;
+    bottom: 5px;                     /* 靠下 */
+    right: 10px;                      /* 靠右 */
+    font-family: 'Ma Shan Zheng', cursive; /* 书法体 */
+    font-size: 2rem;                  /* 放大字体 */
+    font-weight: 900;                 /* 粗体 */
+    color: #efbfc6;                   /* 粉色 */
+    letter-spacing: 0.05em;           /* 适当间距 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 轻微阴影增加立体感 */
+}
+
+/* 深色模式签名 */
+body.dark .hero-signature {
+    color: #f8b8c4;                   /* 浅粉色 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+/* GitHub 项目卡片 */
+#project-cards-container .project-card {
+    background: #fff7f6;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 72ch;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#project-cards-container .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px -6px rgba(0,0,0,0.12);
+}
+
+#project-cards-container .project-card h3 a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+#project-cards-container .project-card h3 a:hover {
+    text-decoration: underline;
+}
+
+#project-cards-container .project-card span {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #fde8e8;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #e85a85;
+}
+
+
+
+
+
+
+/* 深色模式下 GitHub 项目卡片 */
+body.dark #project-cards-container .project-card {
+    background-color: #1e1e1e !important; /* 深色背景 */
+    border: 1px solid #333 !important;   /* 边框 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important; /* 阴影 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+/* 卡片悬停效果 */
+body.dark #project-cards-container .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;
+}
+
+/* 卡片内标题链接颜色 */
+body.dark #project-cards-container .project-card h3 a {
+    color: #ed8998; /* 强调色 */
+}
+
+body.dark #project-cards-container .project-card h3 a:hover {
+    text-decoration: underline;
+}
+
+/* 卡片内语言标签 */
+body.dark #project-cards-container .project-card span.language {
+    background-color: #2a2a2a; /* 深色标签背景 */
+    color: #ed8998;            /* 标签文字颜色 */
+}
+
+
+
+
+/* 筛选按钮容器 */
+.language-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 2rem;
+}
+
+/* 筛选按钮 */
+.language-filters button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-card);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* 激活状态 */
+.language-filters button.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* 项目卡片过渡动画 */
+.project-card {
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    /* 不改高度和 margin/padding */
+}
+
+
+
+
+
+
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #767272; /* 背景灰色 */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0; /* 初始宽度为0 */
+    background-color: #ddb7c9; /* 粉色 */
+    border-radius: 10px;
+    transition: width 1.5s ease; /* 平滑动画 */
+}
+
+
+
+
+
+
+
+
+.about-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.about-left {
+    flex: 1; /* 左边文字自适应宽度 */
+}
+
+.about-right {
+    width: 400px; /* 地图固定宽度 */
+}
+
+#my-map {
+    width: 100%;
+    height: 500px; /* 高度可自定义 */
+}
+
+
+
+
+
+
+#arrow-svg {
+    z-index: 10;
+}
+
+#arrow-line {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawArrow 2s ease forwards;
+}
+
+@keyframes drawArrow {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+
+
+
+
+
+.art-timeline-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 20px; /* 时间轴位置 */
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #f8bfdb;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* 圆点与作品间距 */
+    position: relative;
+    padding-left: 40px; /* 给圆点留空间 */
+}
+
+.timeline-circle {
+    width: 20px;
+    height: 20px;
+    background: #fab2d6;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    top: 5px; /* 微调圆点与标题对齐 */
+}
+
+#tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid #a18c96;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10000; /* 确保在最上层 */
+}
+
+
+
+
+.art-timeline {
+    position: relative;
+}
+
+.timeline-tip {
+    position: absolute;
+    left: -40px;           /* 控制在左侧，不超出边界 */
+    top: 0;
+    width: 40px;           /* 宽度控制竖排文字空间 */
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    writing-mode: vertical-rl;  /* 竖排，从上到下 */
+    text-orientation: upright;  /* 保持每个字竖直 */
+    overflow: hidden;      /* 避免跑出容器 */
+    white-space: nowrap;
+}
+
+
